@@ -2,13 +2,26 @@ import boto3
 import json
 
 # Set the AWS region
-region_name = "us-east-1"
+region_name = "us-west-1"
 
 # Initialize the clients
 ec2 = boto3.client('ec2', region_name=region_name)
 cloudwatch = boto3.client('logs', region_name=region_name)
 cloudtrail = boto3.client('cloudtrail', region_name=region_name)
 sqs = boto3.client('sqs', region_name=region_name)
+
+print("Delete EC2 instances if available")
+# List of instance names to delete
+instance_names = ["elastic-agent", "elastic-app"]
+
+# Get instances with matching names
+response = ec2.describe_instances(Filters=[{'Name': 'tag:Name', 'Values': instance_names}])
+
+# Delete instances
+for reservation in response['Reservations']:
+    for instance in reservation['Instances']:
+        instance_id = instance['InstanceId']
+        ec2.terminate_instances(InstanceIds=[instance_id])
 
 # List of security groups to delete
 security_group_names = ["elastic-agent"]
