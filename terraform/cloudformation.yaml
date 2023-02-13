@@ -134,7 +134,7 @@ Resources:
           cd "/home/ubuntu/aws-workshop/terraform/"
           mkdir local_env
           cd local_env
-          jq -n --arg aws_access_key "${AccessKey}" --arg aws_secret_key "${AccessKey.SecretAccessKey}" --arg aws_region "${Region}" --arg elastic_region "${Region}" --arg lambda_url "${lambda_url}" '$ARGS.named' > env.json
+          jq -n --arg aws_access_key "${AccessKey}" --arg aws_secret_key "${AccessKey.SecretAccessKey}" --arg aws_region "${Region}" --arg elastic_region "${Region}" '$ARGS.named' > env.json
           
           export EC_API_KEY=${ElasticCloudApiKey}
           export AWS_ACCESS_KEY_ID=${AccessKey}
@@ -144,6 +144,6 @@ Resources:
           terraform init
           EC_API_KEY=${ElasticCloudApiKey} terraform import -var-file="../local_env/env.json" aws_iam_role.vpcflow vpcflow_writer
           EC_API_KEY=${ElasticCloudApiKey} terraform apply -var-file="../local_env/env.json" -auto-approve
-          EC_API_KEY=${ElasticCloudApiKey} terraform apply -var-file="../local_env/env.json" -replace aws_serverlessapplicationrepository_cloudformation_stack.esf_cf_stack --replace aws_instance.elastic-agent -auto-approve
+          EC_API_KEY=${ElasticCloudApiKey} terraform apply -var-file="../local_env/env.json" -replace aws_serverlessapplicationrepository_cloudformation_stack.esf_cf_stack -auto-approve
     DependsOn:
       - AccessKey

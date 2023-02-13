@@ -4,13 +4,7 @@
 
 # TODO: Only load necessary log groups
 data "aws_cloudwatch_log_groups" "all" {
-    depends_on = [
-      aws_cloudwatch_log_group.sample-lambda-logs
-    ]
-}
-
-resource "aws_cloudwatch_log_group" "sample-lambda-logs" {
-  name = "/aws/lambda/sample-app-dev-consumer"
+  log_group_name_prefix = "/aws/lambda/sample-app-dev"
 }
 
 # -------------------------------------------------------------

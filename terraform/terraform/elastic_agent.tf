@@ -131,5 +131,6 @@ resource "aws_instance" "elastic-app" {
   user_data = "${data.template_file.install_agent2.rendered}"
 
   depends_on = [
-    ec_deployment.elastic_deployment  ]
+    ec_deployment.elastic_deployment,
+    aws_instance.elastic-agent  ]
 }

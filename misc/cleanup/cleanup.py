@@ -1,7 +1,8 @@
 import boto3
+import json
 
 # Set the AWS region
-region_name = "us-east-2"
+region_name = "us-east-1"
 
 # Initialize the clients
 ec2 = boto3.client('ec2', region_name=region_name)
@@ -65,3 +66,94 @@ except:
     print("SQS queues not found")
 else:
     print("SQS queues deleted")
+
+# Initialize an S3 client
+s3 = boto3.client("s3", region_name=region_name)
+s3r = boto3.resource("s3", region_name=region_name)
+
+# List of S3 bucket names to be emptied and deleted
+buckets = ["sample-app-dev", "elastic-sar-bucket"]
+
+
+for bucket_prefix in buckets:
+    print('Try to delete buckets with prefix %s', bucket_prefix)
+
+    # get a list of all buckets
+    response = s3.list_buckets()
+
+    for bucket in response['Buckets']:
+        if bucket['Name'].startswith(bucket_prefix):
+
+            bucket_region = s3.get_bucket_location(Bucket=bucket['Name'])['LocationConstraint']
+            if not bucket_region:
+                bucket_region = 'us-east-1'  # default to us-east-1 if no region is specified
+            if bucket_region != s3.meta.region_name:
+                continue
+
+            bucket_name = bucket['Name']
+            # Add a bucket policy to deny all write operations
+            bucket_policy = {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Sid": "DenyWriteOperations",
+                        "Effect": "Deny",
+                        "Principal": "*",
+                        "Action": [
+                            "s3:PutObject",
+                            "s3:PutObjectAcl",
+                            "s3:PutObjectVersionAcl",
+                            "s3:PutObjectTagging",
+                        ],
+                        "Resource": f"arn:aws:s3:::{bucket_name}/*"
+                    }
+                ]
+            }            
+
+            print('Put Bucket policy')
+            s3.put_bucket_policy(Bucket=bucket_name, Policy=json.dumps(bucket_policy))
+
+            # List all objects in the bucket
+            while (True) :
+                print('Trigger object versions delete')
+                bucket = s3r.Bucket(bucket_name)
+                bucket.object_versions.delete()
+
+                try:
+                    objects = s3.list_objects(Bucket=bucket_name)["Contents"]
+                    # Loop through all the objects in the bucket and delete them
+                    print('Start to empty the Bucket for %s objects', len(objects))
+                    count = 0
+                    for obj in objects:
+                        if count % 100 == 0 :
+                            print('Deleted %s out of %s', count, len(objects))
+                        s3.delete_object(Bucket=bucket_name, Key=obj["Key"])
+                        count = count + 1
+                except:
+                    print('Bucket is empty')
+                
+                try:
+                    print('Delete the Bucket')
+                    # Once all objects are deleted, delete the bucket policy and the bucket
+                    s3.delete_bucket_policy(Bucket=bucket_name)
+                    s3.delete_bucket(Bucket=bucket_name)
+                except:
+                    print('Bucket still not empty')
+                    continue
+                else:
+                    break
+
+print('Delete CloudFormation Stack')
+# create a CloudFormation client object
+cloudformation = boto3.client('cloudformation', region_name=region_name)
+
+# specify the name of the stack that you want to delete
+stack_name = 'sample-app-dev'
+
+# delete the stack
+try:
+    response = cloudformation.delete_stack(StackName=stack_name)
+except:
+    print("cloudformation stack not found")
+else:
+    print("cloudformation stack deleted")
