@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elastic on AWS Workshop on Elastic Observability on AWS Workshop</title>
+    <link>/</link>
+    <description>Recent content in Elastic on AWS Workshop on Elastic Observability on AWS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is Elastic?</title>
+      <link>/00_introduction/page-1-elastic.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/00_introduction/page-1-elastic.html</guid>
+      <description>At Elastic, we see endless possibilities in a world of endless data. And we use the power of search to help people and organizations turn that possibility into results.
+As the leading platform for search-powered solutions, we help everyone — organizations, their employees, and their customers — accelerate the results that matter.
+With solutions in Enterprise Search, Observability, and Security, we help people find what they need faster, keep mission-critical applications running smoothly, and protect against cyber threats.</description>
+    </item>
+    
+    <item>
+      <title>Enable Elastic in AWS Marketplace</title>
+      <link>/01_getting-started/page-1-aws-marketplace.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/01_getting-started/page-1-aws-marketplace.html</guid>
+      <description>The first step you need to do is to activate Elastic in your AWS account. In order to do so the best way is to subscribe to Elastic via AWS Marketplace using ela.st/aws During the setup you need to create an Elastic Cloud Account which automatically starts your 7 days trial. You can skip step 3, which is installing the default Cloud Formation script. We will do that as workshop preparation in a later stage to also install the sample app for you.</description>
+    </item>
+    
+    <item>
+      <title>Get credentials from Elastic</title>
+      <link>/01_getting-started/page-1-elastic-key.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/01_getting-started/page-1-elastic-key.html</guid>
+      <description>In order to get credentials from the Elastic environment you need to create an API key within the Elastic Cloud Portal. The easiest way to do is to navigate to ela.st/cloud-key. From there just create the API and keep it save for later usage in your cloud formation script.</description>
+    </item>
+    
+    <item>
+      <title>Run the Cloud Formation script</title>
+      <link>/01_getting-started/page-1-cloud-formation.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/01_getting-started/page-1-cloud-formation.html</guid>
+      <description>Now we have everything in place in order to create your environment using Cloud Formation. Just click on the following button and enter the API key that you have created within your Elastic Cloud via AWS Marketplace environment (step 4)
+Create your environmentAdd your Elastic API Key to the template: Acknowledge the creation of resources: And finally click on create stack. Afterwards we will create the environment for you. This can take some time.</description>
+    </item>
+    
+    <item>
+      <title>Observe the AWS platform</title>
+      <link>/99_observability/page-1-platform.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/99_observability/page-1-platform.html</guid>
+      <description>Platform Logs In AWS you have three options to collect logs. This also holds for the platform / service specific logs. You can collect the data via the Serverless Log forwarder, via CloudWatch or collect the data from an S3 bucket.
+If you decide for the S3 bucket you need to configure SQS notifications that get triggered whenever new data is written to the bucket. This approach is best practice to avoid significant lagging with polling.</description>
+    </item>
+    
+    <item>
+      <title>The environment</title>
+      <link>/02_demo/page-1-environment.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/02_demo/page-1-environment.html</guid>
+      <description>Architecture We’ve prepared an AWS + Elastic environment for you. Within the AWS environment there is a simple python application deployed on EC2. This application is accessing DynamoDB and uses Lambda functions to enrich an object with more information. All the monitoring information including metrics and logs from the entire system are collected in Elastic. This is done by using one Elastic Agent at the EC2 instance and the Elastic Serverless forwarder for the logs.</description>
+    </item>
+    
+    <item>
+      <title>Observe apps running in AWS</title>
+      <link>/99_observability/page-1-example-app.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/99_observability/page-1-example-app.html</guid>
+      <description>While apps running in AWS use many of the available AWS services they all have their custom code as well. Consequently observing the AWS services and platform is only one part of the story. The other necessary part to get full visibility is to have the ability to look deep into what&amp;rsquo;s happening in your application as well by observing your individual logs, metrics and application traces.
+Application logs In order to get your individual logs to Elastic you need to consider two things.</description>
+    </item>
+    
+    <item>
+      <title>Observe apps running in Kubernetes (EKS)</title>
+      <link>/99_observability/page-1-k8s.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/99_observability/page-1-k8s.html</guid>
+      <description>Observe apps running in Kubernetes (EKS) This guide will cover how to use the Elastic Stack to provide comprehensive monitoring of your EKS Kubernetes environment including:
+Container Logging Container Metrics Kubernetes posture management Kubernetes process and session monitoring EKS Audit Logging Kubernetes SIEM rules To be able to tell the Elastic Agent what data to collect we will create a policy with the relevant kubernetes integrations.
+In the left navigation menu, select “Fleet” Select the “Agent policies” tab Select “Create agent policy” Call the policy something like “k8s” and leave the default to gather system logs and metrics.</description>
+    </item>
+    
+    <item>
+      <title>Observe vulnerabilities and compliance</title>
+      <link>/99_observability/page-1-conpliance.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/99_observability/page-1-conpliance.html</guid>
+      <description>Observing vulnerabilities and compliance Operating your services within AWS enables you to use the wide range of AWS specific offerings in your application. Because of the complexity and the many different configuration options as well as the shared responsibilities between AWS your company its also possible to operate with less secure setups.
+In order to prevent that Elastic also offers to support you with observing the configurations of your used services.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Root Cause Analysis on Elastic Observability on AWS Workshop</title>
+    <link>/02_demo.html</link>
+    <description>Recent content in Root Cause Analysis on Elastic Observability on AWS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/02_demo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The environment</title>
+      <link>/02_demo/page-1-environment.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/02_demo/page-1-environment.html</guid>
+      <description>Architecture We’ve prepared an AWS + Elastic environment for you. Within the AWS environment there is a simple python application deployed on EC2. This application is accessing DynamoDB and uses Lambda functions to enrich an object with more information. All the monitoring information including metrics and logs from the entire system are collected in Elastic. This is done by using one Elastic Agent at the EC2 instance and the Elastic Serverless forwarder for the logs.</description>
+    </item>
+    
+  </channel>
+</rss>

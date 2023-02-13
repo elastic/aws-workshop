@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on Elastic Observability on AWS Workshop</title>
+    <link>/00_introduction.html</link>
+    <description>Recent content in Introduction on Elastic Observability on AWS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/00_introduction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is Elastic?</title>
+      <link>/00_introduction/page-1-elastic.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/00_introduction/page-1-elastic.html</guid>
+      <description>At Elastic, we see endless possibilities in a world of endless data. And we use the power of search to help people and organizations turn that possibility into results.
+As the leading platform for search-powered solutions, we help everyone — organizations, their employees, and their customers — accelerate the results that matter.
+With solutions in Enterprise Search, Observability, and Security, we help people find what they need faster, keep mission-critical applications running smoothly, and protect against cyber threats.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="description" content="Elastic on AWS Workshop description">
+<meta name="author" content="Felix Roessel">
+
+    <link rel="icon" href="https://awsmedia.s3.amazonaws.com/favicon.ico" type="image/x-icon" />
+
+    <title>Observability :: Elastic on AWS Workshop</title>
+
+    
+    <link href="/css/nucleus.css?1657715404" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1657715404" rel="stylesheet">
+    <link href="/css/hybrid.css?1657715404" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1657715404" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1657715404" rel="stylesheet">
+    <link href="/css/auto-complete.css?1657715404" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1657715404" rel="stylesheet">
+    <link href="/css/theme.css?1657715404" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1657715404" rel="stylesheet">
+    
+    <link href="/css/theme-mine.css?1657715404" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1657715404"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/02_observability.html">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="/" title="Go home"><img style="vertical-align:middle;margin:30px;" src="../../images/AWS-Logo_White-Color.png" height="125px">
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1657715404"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1657715404"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1657715404"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/00_introduction.html" title="Introduction" class="dd-item
+        
+        
+        
+        ">
+      <a href="/00_introduction.html">
+          <b>0. </b>Introduction
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/01_getting-started.html" title="Getting started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/01_getting-started.html">
+          <b>1. </b>Getting started
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/02_observability.html" title="Observability" class="dd-item
+        
+        active
+        
+        ">
+      <a href="/02_observability.html">
+          <b>2. </b>Observability
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/03_conclusion.html" title="Conclusion" class="dd-item
+        
+        
+        
+        ">
+      <a href="/03_conclusion.html">
+          <b>3. </b>Conclusion
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://awsworkshop.io"><i class='fas fa-graduation-cap'></i> Modernization Workshops</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://aws.amazon.com/builders-library/"><i class='fas fa-tools'></i> AWS Builders Library</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://aws.amazon.com/blogs/modernizing-with-aws/"><i class='far fa-lightbulb'></i> Modernization with AWS</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://eksworkshop.com/"><i class='fas fa-chalkboard-teacher'></i> EKS Workshop</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://ecsworkshop.com/"><i class='fas fa-chalkboard-teacher'></i> ECS Workshop</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://www.appmeshworkshop.com/"><i class='fas fa-chalkboard-teacher'></i> App Mesh Workshop</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+
+    <a href="https://aws.amazon.com/privacy/?nc1=f_pr">Privacy</a> | <a
+        href="https://aws.amazon.com/terms/?nc1=f_pr">Site Terms</a> | <a
+        href="https://modernization-workshop-bucket.s3-us-west-2.amazonaws.com/license/cc-license.html">CC BY-SA 4.0</a>
+
+</left>
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'>Elastic on AWS Workshop</a> > Observability
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#observe-the-aws-platform">Observe the AWS platform</a>
+      <ul>
+        <li><a href="#platform-logs">Platform Logs</a></li>
+        <li><a href="#cloudwatch-metrics">CloudWatch metrics</a></li>
+        <li><a href="#billing-data">Billing data</a></li>
+      </ul>
+    </li>
+    <li><a href="#observe-apps-running-in-aws">Observe apps running in AWS</a>
+      <ul>
+        <li><a href="#application-logs">Application logs</a></li>
+        <li><a href="#apm-traces">APM (Traces)</a></li>
+        <li><a href="#lambda-functions">Lambda functions</a></li>
+        <li><a href="#observing-vulnerabilities-and-compliance">Observing vulnerabilities and compliance</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Observability
+            </h1>
+          
+
+        
+
+
+
+	<p><a href="https://www.elastic.co/observability/aws-monitoring">Monitoring the AWS environment</a> is a very common use case for Elastic. You can download the complete <a href="https://www.elastic.co/aws/the-elastic-observability-guide-for-aws">ebook</a> about that topic.</p>
+<p><img src="/images/aws-overview.png" alt="AWS overview"></p>
+<p>Elastic observes cross VPC, cross region, cross AZ, cross Account. No matter how you organize your environment, Elastic will fit into it. Collect everything in a single Elastic environment and authorize only the relevant team to it. Even if you are responsible to observe multiple different cloud providers or hybrid environments Elastic can help you getting better insights into what is happening in one single tool.</p>
+<p>Elastic supports collecting data via different ways. Using the Elastic Agent, but also <a href="https://serverlessrepo.aws.amazon.com/applications/eu-central-1/267093732750/elastic-serverless-forwarder">agentless</a> and native integrations are available. In the introduction we already learned about the Elastic Agent and how this can get used. We will continue using the agent to observe the AWS platform and the apps you are running in it.</p>
+<p>However if you prefer not using the Elastic Agent you can collect the same data using the <a href="https://serverlessrepo.aws.amazon.com/applications/eu-central-1/267093732750/elastic-serverless-forwarder">Elastic serverless forwarder</a> which is a Lambda function that is able to collect the same data without the need to deploy an agent.</p>
+<p><img src="/images/aws-serverless-overview.png" alt="AWS serverless overview"></p>
+<h2 id="observe-the-aws-platform">Observe the AWS platform</h2>
+<h3 id="platform-logs">Platform Logs</h3>
+<p>In AWS you have three options to collect logs. This also holds for the platform / service specific logs. You can collect the data via the Serverless Log forwarder, via CloudWatch or collect the data from an S3 bucket.</p>
+<p>If you decide for the S3 bucket you need to configure SQS notifications that get triggered whenever new data is written to the bucket. This approach is best practice to avoid significant lagging with polling. Elastic Agent combines notification and polling together by using Amazon SQS for Amazon S3 notification when a new Amazon S3 object is created.</p>
+<p>To configure SQS Event Notifications click into the bucket that is holding your log data and navigate to “Properties”. Within the Properties section look for Event notifications and create a new entry.</p>
+<h4 id="cloudtrail">Cloudtrail</h4>
+<p>AWS CloudTrail enables governance, compliance, operational auditing, and risk auditing of your AWS account. This is helpful to observe the activities happening within your AWS environment(s).
+<img src="/images/cloudtrail.png" alt="AWS cloudtrail"></p>
+<h4 id="vpc-flow-logs">VPC Flow logs</h4>
+<p>Elastic Observability allows you to quickly search, view, and filter Amazon Virtual Private Cloud (Amazon VPC) Flow Logs to monitor network traffic within your Amazon VPC with Kibana. With this integration, you can analyze the flow log data and compare it with your security group configurations to maintain and improve your cloud security.
+<img src="/images/vpc-flow.png" alt="AWS vpc flow"></p>
+<h3 id="cloudwatch-metrics">CloudWatch metrics</h3>
+<p>With Elastic’s integrations and pre-built dashboards for AWS, you can collect AWS metrics such as usage, performance and more to see how every signal correlates — enabling you to make more informed business decisions.
+<img src="/images/metrics.png" alt="AWS CloudWatch metrics"></p>
+<p>In order to collect AWS CloudWatch metrics you need to navigate to the installed integrations and change the AWS integration. Click on AWS → Integration policies → aws-1 (Default name)
+<img src="/images/integration-page.png" alt="Elastic integration page">
+Just enable every integration that is delivering metrics. Screenshot is not showing all possible options.
+<img src="/images/metric-integrations.png" alt="Elastic aws metric integrations">
+After enabling all the metrics you should be able to see the data in the out of the box dashboards.</p>
+<p>You can also extend the out of the box dashboards by downloading pre-built dashboards from the Elastic Community.</p>
+<h3 id="billing-data">Billing data</h3>
+<p>The AWS Billing data is a special part of the metric data from the previous chapter. The purpose of this data is to get mutual understanding of the current spending within the observed AWS accounts / organizations.
+Per default AWS only sends service level billing data which is nice to get a high level overview. However if your target is to reduce costs by correlating the usage data (logs and metrics) with the billing data this might be not enough details. AWS also offers to export more detailed billing data within the API or into a separate S3 bucket. Collecting this resource level billing data is very useful to compare the usage and the actual cost and therefore identify possible savings.</p>
+<p><img src="/images/billing-integration.png" alt="Elastic aws billing integration"></p>
+<p>The AWS billing data is just another AWS integration that is available for the Elastic Agent. Just enable this integration and make sure that the access you are using has appropriate rights in order to get the data.</p>
+<h2 id="observe-apps-running-in-aws">Observe apps running in AWS</h2>
+<p>While apps running in AWS use many of the available AWS services they all have their custom code as well. Consequently observing the AWS services and platform is only one part of the story. The other necessary part to get full visibility is to have the ability to look deep into what&rsquo;s happening in your application as well by observing your individual logs, metrics and application traces.</p>
+<h3 id="application-logs">Application logs</h3>
+<p>In order to get your individual logs to Elastic you need to consider two things. First how to get the logs of all parts of the application in. If your application is using container or kubernetes technology this is quite simple.</p>
+<p>If your application is running on EC2 instances you might need to collect custom log sources.</p>
+<p>Independently of the log collection your also need to consider the log parsing. Per default custom logs will be collected as is. But most often the interesting information are within the log line itself. Therefore it can be helpful to parse the relevant information within the log lines and store them in separate fields. This makes it really handy to create visualizations and filters based on these extracted values.</p>
+<p>If you are not sure whether you need something to parse out or not the best option is use a runtime field. A runtime field can be generated after the data is loaded and will extract the necessary information from any document that exists. However this comes with some performance drawbacks.
+If you know which kind of information you would like to extract the better option is to use pre index parsing using ingest node pipelines. Within an ingest node pipeline you can configure so-called processors to extract and fine tune the parsing before the data gets indexed to Elastic. The big advantage is that this will happen only once per document. In comparison to the runtime fields where the extraction happens on every query for every affected document.</p>
+<p>Having a look into the integrations page within Elastic there are multiple possibilities to get your custom logs in.
+<img src="/images/integration-page-2.png" alt="Elastic integration page">
+Elastic offers Serverless log forwarding using Lambda functions, as well as Log collection from S3, CloudWatch and directly from the EC2 machine. In addition to that you also could use the diverse language clients to directly send the logs to Elastic from your application.</p>
+<p>After you added the integration based on your need you can change the parsing like described above using the Ingest Pipelines (Under Stack Management).</p>
+<h3 id="apm-traces">APM (Traces)</h3>
+<p>The collection and analysis of Application transactions and traces help you to get a deep understanding of what is happening within your application and how the different parts communicate to each other.</p>
+<p>Using distributed tracing you also can have a look into the service map that will be created automatically based on the data and the service map also incorporates Elastic Machine Learning results.
+<img src="/images/service-map.png" alt="Elastic service map"></p>
+<h3 id="lambda-functions">Lambda functions</h3>
+<p>Many of the modern application within the AWS ecosystem also using Lambda function. With Elastic APM its also possible to collect the traces from the Lamdba functions in additions to the CloudWatch metrics that you can collect.
+The following pictures illustrates how Elastic APM integrates into your Lambda processes.
+<img src="/images/lambda-to-elastic.png" alt="Lambda to Elastic"></p>
+<h3 id="observing-vulnerabilities-and-compliance">Observing vulnerabilities and compliance</h3>
+<p>Operating your services within AWS enables you to use the wide range of AWS specific offerings in your application. Because of the complexity and the many different configuration options as well as the shared responsibilities between AWS your company its also possible to operate with less secure setups.</p>
+<p>In order to prevent that Elastic also offers to support you with observing the configurations of your used services.
+<img src="/images/endpoint-integration.png" alt="Elastic Endpoint integration">
+To observe and prevent vulnerabilities you can use the Elastic Endpoint Integration that is part of the Elastic agent and use this to prevent any kind of malware or ransomware attacks to your used EC2 instances. Like with all other integrations the activation only needs a few clicks and is done after a few minutes.</p>
+<p>To also observe compliance and configuration issues Elastic also provides Cloud Posture management in order to execute automatic audits and benchmarks against your environment.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/01_getting-started.html" title="Getting started"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/03_conclusion.html" title="Conclusion" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1657715404"></script>
+    <script src="/js/perfect-scrollbar.min.js?1657715404"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1657715404"></script>
+    <script src="/js/jquery.sticky.js?1657715404"></script>
+    <script src="/js/featherlight.min.js?1657715404"></script>
+    <script src="/js/highlight.pack.js?1657715404"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1657715404"></script>
+    <script src="/js/learn.js?1657715404"></script>
+    <script src="/js/hugo-learn.js?1657715404"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1657715404"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>

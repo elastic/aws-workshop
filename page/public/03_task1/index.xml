@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Find issues in applications running on AWS on Elastic Observability on AWS Workshop</title>
+    <link>/03_task1.html</link>
+    <description>Recent content in Find issues in applications running on AWS on Elastic Observability on AWS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/03_task1/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

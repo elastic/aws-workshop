@@ -1,0 +1,17 @@
+{
+    "processors": [
+      {
+        "set": {
+          "field": "event.original",
+          "copy_from": "message"
+        }
+      },
+      {
+        "json": {
+          "field": "message",
+          "add_to_root": true,
+          "ignore_failure": true
+        }
+      }
+    ]
+  }

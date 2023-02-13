@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting started on Elastic Observability on AWS Workshop</title>
+    <link>/01_getting-started.html</link>
+    <description>Recent content in Getting started on Elastic Observability on AWS Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="/01_getting-started/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enable Elastic in AWS Marketplace</title>
+      <link>/01_getting-started/page-1-aws-marketplace.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/01_getting-started/page-1-aws-marketplace.html</guid>
+      <description>The first step you need to do is to activate Elastic in your AWS account. In order to do so the best way is to subscribe to Elastic via AWS Marketplace using ela.st/aws During the setup you need to create an Elastic Cloud Account which automatically starts your 7 days trial. You can skip step 3, which is installing the default Cloud Formation script. We will do that as workshop preparation in a later stage to also install the sample app for you.</description>
+    </item>
+    
+    <item>
+      <title>Get credentials from Elastic</title>
+      <link>/01_getting-started/page-1-elastic-key.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/01_getting-started/page-1-elastic-key.html</guid>
+      <description>In order to get credentials from the Elastic environment you need to create an API key within the Elastic Cloud Portal. The easiest way to do is to navigate to ela.st/cloud-key. From there just create the API and keep it save for later usage in your cloud formation script.</description>
+    </item>
+    
+    <item>
+      <title>Run the Cloud Formation script</title>
+      <link>/01_getting-started/page-1-cloud-formation.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/01_getting-started/page-1-cloud-formation.html</guid>
+      <description>Now we have everything in place in order to create your environment using Cloud Formation. Just click on the following button and enter the API key that you have created within your Elastic Cloud via AWS Marketplace environment (step 4)
+Create your environmentAdd your Elastic API Key to the template: Acknowledge the creation of resources: And finally click on create stack. Afterwards we will create the environment for you. This can take some time.</description>
+    </item>
+    
+  </channel>
+</rss>

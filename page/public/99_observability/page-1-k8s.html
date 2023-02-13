@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="description" content="Elastic Observability on AWS Workshop">
+<meta name="author" content="Felix Roessel">
+
+    <link rel="icon" href="https://awsmedia.s3.amazonaws.com/favicon.ico" type="image/x-icon" />
+
+    <title>Observe apps running in Kubernetes (EKS) :: Elastic Observability on AWS Workshop</title>
+
+    
+    <link href="/css/nucleus.css?1675792333" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675792333" rel="stylesheet">
+    <link href="/css/hybrid.css?1675792333" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675792333" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675792333" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675792333" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675792333" rel="stylesheet">
+    <link href="/css/theme.css?1675792333" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675792333" rel="stylesheet">
+    
+    <link href="/css/theme-mine.css?1675792333" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1675792333"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/99_observability/page-1-k8s.html">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="https://elastic.co" title="Go home" target="_blank"><img src="/images/logo-elastic-horizontal-color-reverse.svg" height="125px">
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1675792333"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675792333"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1675792333"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/00_introduction.html" title="Introduction" class="dd-item
+        
+        
+        
+        ">
+      <a href="/00_introduction.html">
+          Introduction
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/00_introduction/page-1-elastic.html" title="What is Elastic?" class="dd-item ">
+        <a href="/00_introduction/page-1-elastic.html">
+        What is Elastic?
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/01_getting-started.html" title="Getting started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/01_getting-started.html">
+          <b>1. </b>Getting started
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/01_getting-started/page-1-aws-marketplace.html" title="Enable Elastic in AWS Marketplace" class="dd-item ">
+        <a href="/01_getting-started/page-1-aws-marketplace.html">
+        Enable Elastic in AWS Marketplace
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/01_getting-started/page-1-elastic-key.html" title="Get credentials from Elastic" class="dd-item ">
+        <a href="/01_getting-started/page-1-elastic-key.html">
+        Get credentials from Elastic
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/01_getting-started/page-1-cloud-formation.html" title="Run the Cloud Formation script" class="dd-item ">
+        <a href="/01_getting-started/page-1-cloud-formation.html">
+        Run the Cloud Formation script
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/02_demo.html" title="Root Cause Analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/02_demo.html">
+          <b>2. </b>Root Cause Analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/02_demo/page-1-environment.html" title="The environment" class="dd-item ">
+        <a href="/02_demo/page-1-environment.html">
+        The environment
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/03_task1.html" title="Find issues in applications running on AWS" class="dd-item
+        
+        
+        
+        ">
+      <a href="/03_task1.html">
+          Find issues in applications running on AWS
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/99_observability.html" title="Observability" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/99_observability.html">
+          <b>99. </b>Observability
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/99_observability/page-1-platform.html" title="Observe the AWS platform" class="dd-item ">
+        <a href="/99_observability/page-1-platform.html">
+        Observe the AWS platform
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/99_observability/page-1-example-app.html" title="Observe apps running in AWS" class="dd-item ">
+        <a href="/99_observability/page-1-example-app.html">
+        Observe apps running in AWS
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/99_observability/page-1-k8s.html" title="Observe apps running in Kubernetes (EKS)" class="dd-item active">
+        <a href="/99_observability/page-1-k8s.html">
+        Observe apps running in Kubernetes (EKS)
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/99_observability/page-1-conpliance.html" title="Observe vulnerabilities and compliance" class="dd-item ">
+        <a href="/99_observability/page-1-conpliance.html">
+        Observe vulnerabilities and compliance
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/04_task2.html" title="Analyze performance issues" class="dd-item
+        
+        
+        
+        ">
+      <a href="/04_task2.html">
+          Analyze performance issues
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/05_task3.html" title="AIOps Log Spike analysis" class="dd-item
+        
+        
+        
+        ">
+      <a href="/05_task3.html">
+          AIOps Log Spike analysis
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/06_task4.html" title="Anomaly Detection" class="dd-item
+        
+        
+        
+        ">
+      <a href="/06_task4.html">
+          Anomaly Detection
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/08_conclusion.html" title="Conclusion" class="dd-item
+        
+        
+        
+        ">
+      <a href="/08_conclusion.html">
+          <b>3. </b>Conclusion
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://awsworkshop.io"><i class='fas fa-graduation-cap'></i> Modernization Workshops</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://aws.amazon.com/blogs/modernizing-with-aws/"><i class='far fa-lightbulb'></i> Modernization with AWS</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://ela.st/"><i class='fas fa-chalkboard-teacher'></i> Elasticsearch on AWS Marketplace</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://cloud.elastic.co"><i class='fas fa-chalkboard-teacher'></i> Elastic Cloud</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://www.elastic.co/amazon-opensearch-service"><i class='fas fa-chalkboard-teacher'></i> Elasticsearch or OpenSearch?</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+
+    <a href="https://aws.amazon.com/privacy/?nc1=f_pr">Privacy</a> | <a
+        href="https://aws.amazon.com/terms/?nc1=f_pr">Site Terms</a> | <a
+        href="https://modernization-workshop-bucket.s3-us-west-2.amazonaws.com/license/cc-license.html">CC BY-SA 4.0</a>
+
+</left>
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Elastic on AWS Workshop</a> > <a href='/99_observability.html'>Observability</a> > Observe apps running in Kubernetes (EKS)
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#observe-apps-running-in-kubernetes-eks">Observe apps running in Kubernetes (EKS)</a></li>
+        <li><a href="#kubernetes-integration">Kubernetes Integration</a></li>
+        <li><a href="#kubernetes-security-posture-management-integration">Kubernetes Security Posture Management integration</a></li>
+        <li><a href="#endpoint-and-cloud-security">Endpoint and Cloud Security</a></li>
+        <li><a href="#deploying-elastic-agent-in-eks">Deploying Elastic Agent in EKS</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Observe apps running in Kubernetes (EKS)
+            </h1>
+          
+
+        
+
+
+<h3 id="observe-apps-running-in-kubernetes-eks">Observe apps running in Kubernetes (EKS)</h3>
+<p>This guide will cover how to use the Elastic Stack to provide comprehensive monitoring of your EKS Kubernetes environment including:</p>
+<ul>
+<li>Container Logging</li>
+<li>Container Metrics</li>
+<li>Kubernetes posture management</li>
+<li>Kubernetes process and session monitoring</li>
+<li>EKS Audit Logging</li>
+<li>Kubernetes SIEM rules</li>
+</ul>
+<p>To be able to tell the Elastic Agent what data to collect we will create a policy with the relevant kubernetes integrations.</p>
+<ol>
+<li>In the left navigation menu, select “Fleet”</li>
+<li>Select the “Agent policies” tab</li>
+<li>Select “Create agent policy”</li>
+<li>Call the policy something like  “k8s” and leave the default to gather system logs and metrics.</li>
+</ol>
+<p><img src="/images/create-agent-policy.png" alt="Kubernetes agent policy"></p>
+<h3 id="kubernetes-integration">Kubernetes Integration</h3>
+<p>Let&rsquo;s start adding integrations to our new policy.</p>
+<ol>
+<li>Click the policy name.</li>
+<li>Click “Add integration”</li>
+<li>In the search bar lets search for “kubernetes”. This should give us the “Kubernetes“ and “Kubernetes Security Posture Management” integrations</li>
+<li>Let&rsquo;s start with the Kubernetes integration.</li>
+<li>Click the integration and then “Add integration”.</li>
+<li>Leave all of the defaults and click “Save and continue”. This will do two things, it will add the assets for this integration and also create an instance of this integration within your policy.</li>
+<li>It will prompt you to add agents but we want to add some extra integrations first so select “Add Elastic Agent later”.</li>
+</ol>
+<h3 id="kubernetes-security-posture-management-integration">Kubernetes Security Posture Management integration</h3>
+<p>Now let&rsquo;s add the Kubernetes Security Posture Management integration. Click “Add integration” again then find and click on the integration. You will see from the documentation that to be able to check the EKS cluster the integration will need an IAM user and it provides the required permissions.</p>
+<p>In a new tab go to your AWS Console, go to the IAM dashboard and select “Policies” and “Create policy” 
+Select the “JSON” tab and paste the permissions from the documentation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>       {
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">&#34;Sid&#34;</span>: <span style="color:#e6db74">&#34;VisualEditor0&#34;</span>,
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">&#34;Action&#34;</span>: [
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;ecr:GetRegistryPolicy&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;eks:ListTagsForResource&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;elasticloadbalancing:DescribeTags&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;ecr-public:DescribeRegistries&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;ecr:DescribeRegistry&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;elasticloadbalancing:DescribeLoadBalancerPolicyTypes&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;ecr:ListImages&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;ecr-public:GetRepositoryPolicy&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;elasticloadbalancing:DescribeLoadBalancerAttributes&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;elasticloadbalancing:DescribeLoadBalancers&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;ecr-public:DescribeRepositories&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;eks:DescribeNodegroup&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;ecr:DescribeImages&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;elasticloadbalancing:DescribeLoadBalancerPolicies&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;ecr:DescribeRepositories&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;eks:DescribeCluster&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;eks:ListClusters&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;elasticloadbalancing:DescribeInstanceHealth&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#e6db74">&#34;ecr:GetRepositoryPolicy&#34;</span>
+</span></span><span style="display:flex;"><span>           ],
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>       }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Select “Next:Tags”, then “Review” give the policy a name of “elastic-kubernetes-posture” and click “Create policy”.
+Now we have a policy with the correct permissions, we can create the service account for the agent to access EKS.
+Go to “Users” and “Add users”. Let’s name it “elastic-kubernetes-posture-user” and select “Access key” as the credentials. In the permissions screen we can select “Attach existing policies directly” and find the policy we just created called “elastic-kubernetes-posture”. Then go through the “Tags” and “Review” screens before confirming with “Create user”.
+We now have our user. You should be immediately given access key credentials. Copy both the  Access key ID and Secret access key and we can head back to Elastic.</p>
+<p>Back in the posture management integration, click “Add Kubernetes Security Posture Management”. In the configuration screen, in “Kubernetes deployment” select “Kubernetes Security Posture Management“. You can then add the credentials for the user we just created. Your screen should look like the below image with the correct credentials.</p>
+<p><img src="/images/add-kubernetes-integration.png" alt="Kubernetes integration">
+Select “Save and continue” then again pick to deploy agents later.</p>
+<h3 id="endpoint-and-cloud-security">Endpoint and Cloud Security</h3>
+<p>Back to your policy, let’s add one final integration. Back in “Add integration” select “Endpoint and Cloud Security” and then “Add Endpoint and Cloud Security”. Let’s call the integration “k8s-endpoint”. Click “save and continue”, again, choose to deploy agents later.</p>
+<p>We now have 3 integrations in our policy so it should look like this.</p>
+<p><img src="/images/kubernetes-monitoring.png" alt="Kubernetes agent policy"></p>
+<p>We would like to collect session information from kubernetes hosts so let&rsquo;s add that. Click on the name of the Endpoint integration we just created “k8s-endpoint” and you will be taken to the extensive configuration options. Scroll to the bottom and turn on “Include session data”.</p>
+<p><img src="/images/session-viewer.png" alt="Include session data"></p>
+<h3 id="deploying-elastic-agent-in-eks">Deploying Elastic Agent in EKS</h3>
+<p>To enable the Endpoint and Cloud Security integration to capture the required information we can follow the steps outlined in the documentation here: <a href="https://www.elastic.co/guide/en/security/current/kubernetes-dashboard.html">Elastic Kubernetes Documentation</a></p>
+<p>This provides an OOTB manifest to deploy Elastic Agent, with Endpoint added, as a Daemonset to our EKS cluster.  Download this example manifest file here:
+<a href="https://raw.githubusercontent.com/elastic/endpoint/main/releases/8.4.0/kubernetes/deploy/elastic-endpoint-security.yaml">Example manifest</a></p>
+<ol>
+<li>
+<p>Fill in the manifest’s <code>FLEET_URL</code> field with your Fleet server’s Host URL. To find it, go to Kibana → Management → Fleet → Settings. 
+<img src="/images/fleet-server.png" alt="Fleet server URL"></p>
+</li>
+<li>
+<p>Fill in the manifest’s <code>FLEET_ENROLLMENT_TOKEN</code> field with a Fleet enrollment token. To find one, go to Kibana → Management → Fleet → Enrollment tokens. Make sure to use or generate a token which is associated with the k8s policy.
+<img src="/images/enrollment-token.png" alt="Fleet enrollment token"></p>
+</li>
+</ol>
+<p>We can now apply the updated manifest to our EKS cluster to deploy our Elastic Agent Daemonset. E.g. <code>kubectl apply -f elastic-endpoint-security.yaml</code>
+Everything that is within your Kubernetes cluster will be monitored using Elastic now.</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/99_observability/page-1-example-app.html" title="Observe apps running in AWS"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/99_observability/page-1-conpliance.html" title="Observe vulnerabilities and compliance" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1675792333"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675792333"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675792333"></script>
+    <script src="/js/jquery.sticky.js?1675792333"></script>
+    <script src="/js/featherlight.min.js?1675792333"></script>
+    <script src="/js/highlight.pack.js?1675792333"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675792333"></script>
+    <script src="/js/learn.js?1675792333"></script>
+    <script src="/js/hugo-learn.js?1675792333"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1675792333"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    
+
+  </body>
+</html>
+
