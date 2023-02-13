@@ -5,14 +5,6 @@ Parameters:
   ElasticCloudApiKey:
     Type: String
     Description: Enter the Elastic Cloud API Key. You can get it via https://ela.st/cloud-key using the credentials you've created in step 1 of the Elastic Cloud Marketplace setup
-  InstanceType:
-    Type: String
-    Default: t2.micro
-    AllowedValues:
-      - t2.micro
-      - t2.small
-      - t2.medium
-    Description: EC2 instance type
   Region:
     Type: String
     Default: us-east-1
@@ -120,7 +112,7 @@ Resources:
           - AWSAMIRegionMap
           - !Ref 'AWS::Region'
           - 'US2004HVM'
-      InstanceType: !Ref InstanceType
+      InstanceType: 't2.micro'
       SecurityGroupIds:
         - !Ref SecurityGroup
       UserData:
@@ -142,7 +134,7 @@ Resources:
           cd "/home/ubuntu/aws-workshop/terraform/"
           mkdir local_env
           cd local_env
-          jq -n --arg aws_access_key "${AccessKey}" --arg aws_secret_key "${AccessKey.SecretAccessKey}" --arg aws_region "${Region}" --arg elastic_region "${Region}" '$ARGS.named' > env.json
+          jq -n --arg aws_access_key "${AccessKey}" --arg aws_secret_key "${AccessKey.SecretAccessKey}" --arg aws_region "${Region}" --arg elastic_region "${Region}" --arg lambda_url "${lambda_url}" '$ARGS.named' > env.json
           
           export EC_API_KEY=${ElasticCloudApiKey}
           export AWS_ACCESS_KEY_ID=${AccessKey}

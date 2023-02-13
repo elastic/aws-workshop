@@ -80,11 +80,6 @@ serverless config credentials --profile pme --provider aws --key ${aws_access_ke
 serverless deploy --force --aws-profile pme > lambda-urls.txt
 lambda_url=$(grep -Eo '://[^ >]+' lambda-urls.txt | head -1)
 
-echo "Load lambda history"
-cd "/home/ubuntu/aws-workshop/lambda-generator"
-pip install -r requirements.txt
-python3 generate.py &
-
 echo "Install python app"
 cd "/home/ubuntu/aws-workshop/python-app"
 
