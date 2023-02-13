@@ -64,10 +64,10 @@ sudo apt-get --assume-yes install python3-pip
 
 echo "Clone repo"
 cd "/home/ubuntu"
-git clone --recurse-submodules "https://github.com/LucaWintergerst/workshop-draft.git"
+git clone --recurse-submodules "https://github.com/Elastic/aws-workshop.git"
 
 echo "Install lambda function"
-cd "/home/ubuntu/workshop-draft/aws-lambda/lambda-application"
+cd "/home/ubuntu/aws-workshop/aws-lambda/lambda-application"
 npm install -g n
 npm install -g serverless
 npm install --save-dev
@@ -81,12 +81,12 @@ serverless deploy --force --aws-profile pme > lambda-urls.txt
 lambda_url=$(grep -Eo '://[^ >]+' lambda-urls.txt | head -1)
 
 echo "Load lambda history"
-cd "/home/ubuntu/workshop-draft/lambda-generator"
+cd "/home/ubuntu/aws-workshop/lambda-generator"
 pip install -r requirements.txt
 python3 generate.py &
 
 echo "Install python app"
-cd "/home/ubuntu/workshop-draft/python-app"
+cd "/home/ubuntu/aws-workshop/python-app"
 
 pip install boto3 flask python-dotenv ecs_logging structlog cachetools elastic-apm
 
@@ -97,8 +97,8 @@ echo SECRET_TOKEN=${apm_secret_token} >> .env
 echo SERVICE_NAME="python-app" >> .env
 echo aws_lambda_url="httpss$${lambda_url}"  >> .env
 
-chown ubuntu /home/ubuntu/workshop-draft/* -R
-chmod 777 /home/ubuntu/workshop-draft/python-app/fixPerformanceIssue.sh 
+chown ubuntu /home/ubuntu/aws-workshop/* -R
+chmod 777 /home/ubuntu/aws-workshop/misc/fixPerformanceIssue.sh 
 
 echo "Start workshop app"
 python3 app1.py &
