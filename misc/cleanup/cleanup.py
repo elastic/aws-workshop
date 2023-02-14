@@ -2,7 +2,7 @@ import boto3
 import json
 
 # Set the AWS region
-region_name = "us-west-1"
+region_name = "us-east-2"
 
 # Initialize the clients
 ec2 = boto3.client('ec2', region_name=region_name)
