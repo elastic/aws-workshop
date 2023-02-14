@@ -149,16 +149,18 @@ data "external" "elastic_enable_rules" {
 # -------------------------------------------------------------
 #  Load Dashboards
 # -------------------------------------------------------------
+
+# Upload dashboard to the cluster
 data "external" "elastic_upload_saved_objects" {
   query = {
 	elastic_http_method = "POST"
     kibana_endpoint  = ec_deployment.elastic_deployment.kibana[0].https_endpoint
     elastic_username  = ec_deployment.elastic_deployment.elasticsearch_username
     elastic_password  = ec_deployment.elastic_deployment.elasticsearch_password
-    so_file      		= "${path.module}/../dashboards/workshop.ndjson"
+    so_file      		= "${var.filename}"
   }
   program = ["sh", "${path.module}/../lib/elastic_api/kb_upload_saved_objects.sh" ]
-  depends_on = [ec_deployment.elastic_deployment]
+  depends_on = [ec_deployment.elastic_deployment, null_resource.dashboard]
 }
 
 data "external" "elastic_upload_saved_objects2" {
@@ -167,7 +169,19 @@ data "external" "elastic_upload_saved_objects2" {
     kibana_endpoint  = ec_deployment.elastic_deployment.kibana[0].https_endpoint
     elastic_username  = ec_deployment.elastic_deployment.elasticsearch_username
     elastic_password  = ec_deployment.elastic_deployment.elasticsearch_password
-    so_file      		= "${path.module}/../dashboards/AWS-extension.ndjson"
+    so_file      		= "${path.module}/../dashboards/canvas.ndjson"
+  }
+  program = ["sh", "${path.module}/../lib/elastic_api/kb_upload_saved_objects.sh" ]
+  depends_on = [ec_deployment.elastic_deployment]
+}
+
+data "external" "elastic_upload_saved_objects3" {
+  query = {
+	elastic_http_method = "POST"
+    kibana_endpoint  = ec_deployment.elastic_deployment.kibana[0].https_endpoint
+    elastic_username  = ec_deployment.elastic_deployment.elasticsearch_username
+    elastic_password  = ec_deployment.elastic_deployment.elasticsearch_password
+    so_file      		= "${path.module}/../dashboards/AWS-extension_v2.ndjson"
   }
   program = ["sh", "${path.module}/../lib/elastic_api/kb_upload_saved_objects.sh" ]
   depends_on = [ec_deployment.elastic_deployment]
