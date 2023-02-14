@@ -1,6 +1,6 @@
 ---
 title: "Observe apps running in Kubernetes (EKS)"
-weight: 33
+weight: 93
 ---
 ### Observe apps running in Kubernetes (EKS)
 

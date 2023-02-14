@@ -18,15 +18,7 @@
   </url><url>
     <loc>/02_demo.html</loc>
   </url><url>
-    <loc>/99_observability/page-1-platform.html</loc>
-  </url><url>
     <loc>/02_demo/page-1-environment.html</loc>
-  </url><url>
-    <loc>/99_observability/page-1-example-app.html</loc>
-  </url><url>
-    <loc>/99_observability/page-1-k8s.html</loc>
-  </url><url>
-    <loc>/99_observability/page-1-conpliance.html</loc>
   </url><url>
     <loc>/03_task1.html</loc>
   </url><url>
@@ -39,6 +31,14 @@
     <loc>/08_conclusion.html</loc>
   </url><url>
     <loc>/99_observability.html</loc>
+  </url><url>
+    <loc>/99_observability/page-1-conpliance.html</loc>
+  </url><url>
+    <loc>/99_observability/page-1-example-app.html</loc>
+  </url><url>
+    <loc>/99_observability/page-1-k8s.html</loc>
+  </url><url>
+    <loc>/99_observability/page-1-platform.html</loc>
   </url><url>
     <loc>/categories.html</loc>
   </url><url>

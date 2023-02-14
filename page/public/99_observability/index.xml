@@ -7,13 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language><atom:link href="/99_observability/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Observe the AWS platform</title>
-      <link>/99_observability/page-1-platform.html</link>
+      <title>Observe vulnerabilities and compliance</title>
+      <link>/99_observability/page-1-conpliance.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/99_observability/page-1-platform.html</guid>
-      <description>Platform Logs In AWS you have three options to collect logs. This also holds for the platform / service specific logs. You can collect the data via the Serverless Log forwarder, via CloudWatch or collect the data from an S3 bucket.
-If you decide for the S3 bucket you need to configure SQS notifications that get triggered whenever new data is written to the bucket. This approach is best practice to avoid significant lagging with polling.</description>
+      <guid>/99_observability/page-1-conpliance.html</guid>
+      <description>Observing vulnerabilities and compliance Operating your services within AWS enables you to use the wide range of AWS specific offerings in your application. Because of the complexity and the many different configuration options as well as the shared responsibilities between AWS your company its also possible to operate with less secure setups.
+In order to prevent that Elastic also offers to support you with observing the configurations of your used services.</description>
     </item>
     
     <item>
@@ -38,13 +38,13 @@ In the left navigation menu, select “Fleet” Select the “Agent policies” 
     </item>
     
     <item>
-      <title>Observe vulnerabilities and compliance</title>
-      <link>/99_observability/page-1-conpliance.html</link>
+      <title>Observe the AWS platform</title>
+      <link>/99_observability/page-1-platform.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/99_observability/page-1-conpliance.html</guid>
-      <description>Observing vulnerabilities and compliance Operating your services within AWS enables you to use the wide range of AWS specific offerings in your application. Because of the complexity and the many different configuration options as well as the shared responsibilities between AWS your company its also possible to operate with less secure setups.
-In order to prevent that Elastic also offers to support you with observing the configurations of your used services.</description>
+      <guid>/99_observability/page-1-platform.html</guid>
+      <description>Platform Logs In AWS you have three options to collect logs. This also holds for the platform / service specific logs. You can collect the data via the Serverless Log forwarder, via CloudWatch or collect the data from an S3 bucket.
+If you decide for the S3 bucket you need to configure SQS notifications that get triggered whenever new data is written to the bucket. This approach is best practice to avoid significant lagging with polling.</description>
     </item>
     
   </channel>

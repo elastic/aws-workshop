@@ -1,6 +1,6 @@
 ---
 title: "Observe the AWS platform"
-weight: 31
+weight: 94
 ---
 ### Platform Logs
 

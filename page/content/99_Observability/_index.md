@@ -1,7 +1,7 @@
 ---
 title: "Observability"
 chapter: true
-weight: 99
+weight: 90
 pre: "<b>99. </b>"
 ---
 

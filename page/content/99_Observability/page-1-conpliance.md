@@ -1,6 +1,6 @@
 ---
 title: "Observe vulnerabilities and compliance"
-weight: 34
+weight: 91
 ---
 ## Observing vulnerabilities and compliance
 Operating your services within AWS enables you to use the wide range of AWS specific offerings in your application. Because of the complexity and the many different configuration options as well as the shared responsibilities between AWS your company its also possible to operate with less secure setups.

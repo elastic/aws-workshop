@@ -1,6 +1,6 @@
 ---
 title: "Observe apps running in AWS"
-weight: 32
+weight: 92
 ---
 
 While apps running in AWS use many of the available AWS services they all have their custom code as well. Consequently observing the AWS services and platform is only one part of the story. The other necessary part to get full visibility is to have the ability to look deep into what's happening in your application as well by observing your individual logs, metrics and application traces.  
