@@ -30,8 +30,6 @@
   </url><url>
     <loc>/03_task1.html</loc>
   </url><url>
-    <loc>/99_observability.html</loc>
-  </url><url>
     <loc>/04_task2.html</loc>
   </url><url>
     <loc>/05_task3.html</loc>
@@ -39,6 +37,8 @@
     <loc>/06_task4.html</loc>
   </url><url>
     <loc>/08_conclusion.html</loc>
+  </url><url>
+    <loc>/99_observability.html</loc>
   </url><url>
     <loc>/categories.html</loc>
   </url><url>

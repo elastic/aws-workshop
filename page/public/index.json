@@ -98,13 +98,6 @@
 	"content": "Task 1 In the first task you have to find the root cause of an issue within our sample application. You can see that there is an issue because of the existence of error messages.\nYou can find error messages within the logs and also by looking at the APM data. Both ways will lead to the expected results. Choose the one that is more preferably for you.\nYou know that you’ve fixed the issue when there is no new error message coming in. After Task 1 You now have seen how a dashboard could be used to dive into the data and perform a root cause analysis for some simple issues. Elastic offers different kind of visualizations. Another very handy way to visualize your data is using Canvas. In contrast to the dashboard you have used to solve task 1, the Canvas dashboard is more graphical and less interactive. However it also has some unique capabilties like attaching metric data next to your e.g. architecture diagrams. That can help a lot in understanding where the issue is coming from. We\u0026rsquo;ve prepared a Canvas Dashboard in your Environment that visualizes the different ways log data is flowing into your cluster. Find the Canvas board in your environment and double check that all the data flows are working fine.\n"
 },
 {
-	"uri": "/99_observability.html",
-	"title": "Observability",
-	"tags": [],
-	"description": "",
-	"content": "Monitoring the AWS environment is a very common use case for Elastic. You can download the complete ebook about that topic.\nElastic observes cross VPC, cross region, cross AZ, cross Account. No matter how you organize your environment, Elastic will fit into it. Collect everything in a single Elastic environment and authorize only the relevant team to it. Even if you are responsible to observe multiple different cloud providers or hybrid environments Elastic can help you getting better insights into what is happening in one single tool.\nElastic supports collecting data via different ways. Using the Elastic Agent, but also agentless and native integrations are available. In the introduction we already learned about the Elastic Agent and how this can get used. We will continue using the agent to observe the AWS platform and the apps you are running in it.\nHowever if you prefer not using the Elastic Agent you can collect the same data using the Elastic serverless forwarder which is a Lambda function that is able to collect the same data without the need to deploy an agent.\n"
-},
-{
 	"uri": "/04_task2.html",
 	"title": "Analyze performance issues",
 	"tags": [],
@@ -131,6 +124,13 @@
 	"tags": [],
 	"description": "",
 	"content": "After finishing the workshop your Elastic Environment is set up to collect and visualize all necessary data in order to observe everything that is happening within your infrastructure.\nTo finalize the setup it is necessary to include Elastic in your day to day processes. Best way to do this is adding alerting rules for your Machine Learning jobs and also for specific data / events that needs your attention.\nAfter setting up your set of alerting rules you might also want to automate the response to it. Every Elastic alert can have multiple connectors. That enables notifications as well as custom actions through e.g. webhooks.\n"
+},
+{
+	"uri": "/99_observability.html",
+	"title": "Observability",
+	"tags": [],
+	"description": "",
+	"content": "Monitoring the AWS environment is a very common use case for Elastic. You can download the complete ebook about that topic.\nElastic observes cross VPC, cross region, cross AZ, cross Account. No matter how you organize your environment, Elastic will fit into it. Collect everything in a single Elastic environment and authorize only the relevant team to it. Even if you are responsible to observe multiple different cloud providers or hybrid environments Elastic can help you getting better insights into what is happening in one single tool.\nElastic supports collecting data via different ways. Using the Elastic Agent, but also agentless and native integrations are available. In the introduction we already learned about the Elastic Agent and how this can get used. We will continue using the agent to observe the AWS platform and the apps you are running in it.\nHowever if you prefer not using the Elastic Agent you can collect the same data using the Elastic serverless forwarder which is a Lambda function that is able to collect the same data without the need to deploy an agent.\n"
 },
 {
 	"uri": "/categories.html",
