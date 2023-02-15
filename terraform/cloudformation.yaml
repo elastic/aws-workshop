@@ -145,6 +145,6 @@ Resources:
           EC_API_KEY=${ElasticCloudApiKey} terraform import -var-file="../local_env/env.json" aws_iam_role.vpcflow vpcflow_writer
           EC_API_KEY=${ElasticCloudApiKey} terraform apply -var-file="../local_env/env.json" -auto-approve
           sleep 1m
-          EC_API_KEY=${ElasticCloudApiKey} terraform apply -var-file="../local_env/env.json" -replace aws_serverlessapplicationrepository_cloudformation_stack.esf_cf_stack -auto-approve
+          EC_API_KEY=${ElasticCloudApiKey} terraform apply -var-file="../local_env/env.json" -replace aws_serverlessapplicationrepository_cloudformation_stack.esf_cf_stack -replace aws_instance.elastic-app  -auto-approve
     DependsOn:
       - AccessKey

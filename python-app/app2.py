@@ -59,7 +59,7 @@ app.config['ELASTIC_APM'] = {
 }
 apm = ElasticAPM(app)
 
-dynamodb = boto3.client("dynamodb", region_name='us-east-1', aws_access_key_id= os.environ["aws_access_key_id"], aws_secret_access_key= os.environ["aws_secret_access_key"])
+dynamodb = boto3.client("dynamodb", region_name=os.environ["aws_region"], aws_access_key_id= os.environ["aws_access_key_id"], aws_secret_access_key= os.environ["aws_secret_access_key"])
 
 try:
   response = dynamodb.create_table(
@@ -92,7 +92,7 @@ try:
 except ClientError as err:
   print(err)
 
-lambdaClient = boto3.client('lambda', region_name='us-east-1', aws_access_key_id=os.environ["aws_access_key_id"], aws_secret_access_key=os.environ["aws_secret_access_key"])
+lambdaClient = boto3.client('lambda', region_name=os.environ["aws_region"], aws_access_key_id=os.environ["aws_access_key_id"], aws_secret_access_key=os.environ["aws_secret_access_key"])
 
 
 @app.route("/add-item", methods=["POST"])
@@ -121,10 +121,14 @@ def endpoint1():
           'item': {'S': req.get("item").get("name"), },
           'metadata': {'S': metadata,},
         }
-    response = dynamodb.put_item(
-      TableName='app1-items',
-      Item=dyanmoItem
-    )
+    try:
+        response = dynamodb.put_item(
+            TableName='app1-items',
+            Item=dyanmoItem
+        )
+    except:
+        #do nothing
+        return "success"
     return "success"
 
 app.run(host='0.0.0.0', port=5002)

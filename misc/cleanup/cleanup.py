@@ -2,7 +2,7 @@ import boto3
 import json
 
 # Set the AWS region
-region_name = "us-east-1"
+region_name = "eu-west-1"
 
 # Initialize the clients
 ec2 = boto3.client('ec2', region_name=region_name)
@@ -89,7 +89,7 @@ buckets = ["sample-app-dev", "elastic-sar-bucket"]
 
 
 for bucket_prefix in buckets:
-    print('Try to delete buckets with prefix %s', bucket_prefix)
+    print('Try to delete buckets with prefix ', bucket_prefix)
 
     # get a list of all buckets
     response = s3.list_buckets()

@@ -96,9 +96,11 @@ echo SERVER_URL=${integration_server_endpoint} >> .env
 echo SECRET_TOKEN=${apm_secret_token} >> .env
 echo SERVICE_NAME="python-app" >> .env
 echo aws_lambda_url="httpss$${lambda_url}"  >> .env
+echo aws_region=${aws_region}  >> .env
 
 chown ubuntu /home/ubuntu/aws-workshop/* -R
 chmod 777 /home/ubuntu/aws-workshop/misc/fixPerformanceIssue.sh 
+chmod 777 /home/ubuntu/aws-workshop/python-app/restart.sh 
 
 echo "Start workshop app"
 python3 app1.py &
