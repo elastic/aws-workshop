@@ -86,7 +86,7 @@ try:
     }
   )
 except ClientError as err:
-  print(err)
+  print("Table already exists. Continuing")
 
 lambdaClient = boto3.client('lambda', region_name='us-east-1', aws_access_key_id=os.environ["aws_access_key_id"], aws_secret_access_key=os.environ["aws_secret_access_key"])
 
@@ -108,7 +108,7 @@ def endpoint1():
             #logger.error("The lambda function defined in the .env file within the app directory seems to be wrong. Change it!")  
             
             #We add the enrichment label only if the enrichment was successful.
-            elasticapm.label(enrichment=True)
+            elasticapm.label(enrichment="true")
           else: 
             metadata = req.get("item").get("metadata")
         dyanmoItem = {
