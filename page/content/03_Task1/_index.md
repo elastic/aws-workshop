@@ -1,6 +1,7 @@
 ---
 title: "Find issues in applications running on AWS"
 weight: 40
+pre: "<b>2.a </b>"
 ---
 ## Task 1
 

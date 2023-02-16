@@ -1,12 +1,14 @@
 ---
 title: "Analyze performance issues"
 weight: 50
+pre: "<b>2.b </b>"
 ---
 ## Task 2
 
 In the second task you have to find the reason for some bad performing transactions. The performance issue becomes visible after the first task is fixed. So it may take a bit of time until you can clearly see it in the charts. It's also okay to reduce the time window of the Kibana charts to only get and see the data after the fix of task 1. 
 
-You know that you’ve fixed the issue when there is no transaction that takes longer than a couple of milliseconds.
+You know that you’ve fixed the issue when there is no transaction that takes longer than a second.
+![Elastic task 2](/images/task2-start.png)
 
 {{%expand "Hint | Only use this if you have no idea how to proceed." %}}
 

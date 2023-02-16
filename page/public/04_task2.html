@@ -12,21 +12,21 @@
     <title>Analyze performance issues :: Elastic Observability on AWS Workshop</title>
 
     
-    <link href="/css/nucleus.css?1676374247" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1676374247" rel="stylesheet">
-    <link href="/css/hybrid.css?1676374247" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1676374247" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1676374247" rel="stylesheet">
-    <link href="/css/auto-complete.css?1676374247" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1676374247" rel="stylesheet">
-    <link href="/css/theme.css?1676374247" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1676374247" rel="stylesheet">
+    <link href="/css/nucleus.css?1676550891" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1676550891" rel="stylesheet">
+    <link href="/css/hybrid.css?1676550891" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1676550891" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1676550891" rel="stylesheet">
+    <link href="/css/auto-complete.css?1676550891" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1676550891" rel="stylesheet">
+    <link href="/css/theme.css?1676550891" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1676550891" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1676374247" rel="stylesheet">
+    <link href="/css/theme-mine.css?1676550891" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1676374247"></script>
+    <script src="/js/jquery-3.3.1.min.js?1676550891"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1676374247"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1676374247"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1676550891"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1676550891"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1676374247"></script>
+<script type="text/javascript" src="/js/search.js?1676550891"></script>
 
     
   </div>
@@ -306,7 +306,7 @@
         
         ">
       <a href="/03_task1.html">
-          Find issues in applications running on AWS
+          <b>2.a </b>Find issues in applications running on AWS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -332,7 +332,7 @@
         
         ">
       <a href="/04_task2.html">
-          Analyze performance issues
+          <b>2.b </b>Analyze performance issues
           
             <i class="fas fa-check read-icon"></i>
           
@@ -358,7 +358,7 @@
         
         ">
       <a href="/05_task3.html">
-          AIOps Log Spike analysis
+          <b>2.c </b>AIOps Log Spike analysis
           
             <i class="fas fa-check read-icon"></i>
           
@@ -384,7 +384,7 @@
         
         ">
       <a href="/06_task4.html">
-          Anomaly Detection
+          <b>2.d </b>Anomaly Detection
           
             <i class="fas fa-check read-icon"></i>
           
@@ -670,7 +670,8 @@
 
 	<h2 id="task-2">Task 2</h2>
 <p>In the second task you have to find the reason for some bad performing transactions. The performance issue becomes visible after the first task is fixed. So it may take a bit of time until you can clearly see it in the charts. It&rsquo;s also okay to reduce the time window of the Kibana charts to only get and see the data after the fix of task 1.</p>
-<p>You know that you’ve fixed the issue when there is no transaction that takes longer than a couple of milliseconds.</p>
+<p>You know that you’ve fixed the issue when there is no transaction that takes longer than a second.
+<img src="/images/task2-start.png" alt="Elastic task 2"></p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1041,19 +1042,19 @@ The Python App only has one trace to analyze. Navigate into that trace and perfo
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1676374247"></script>
-    <script src="/js/perfect-scrollbar.min.js?1676374247"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1676374247"></script>
-    <script src="/js/jquery.sticky.js?1676374247"></script>
-    <script src="/js/featherlight.min.js?1676374247"></script>
-    <script src="/js/highlight.pack.js?1676374247"></script>
+    <script src="/js/clipboard.min.js?1676550891"></script>
+    <script src="/js/perfect-scrollbar.min.js?1676550891"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1676550891"></script>
+    <script src="/js/jquery.sticky.js?1676550891"></script>
+    <script src="/js/featherlight.min.js?1676550891"></script>
+    <script src="/js/highlight.pack.js?1676550891"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1676374247"></script>
-    <script src="/js/learn.js?1676374247"></script>
-    <script src="/js/hugo-learn.js?1676374247"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1676550891"></script>
+    <script src="/js/learn.js?1676550891"></script>
+    <script src="/js/hugo-learn.js?1676550891"></script>
     
         
-            <script src="/mermaid/mermaid.js?1676374247"></script>
+            <script src="/mermaid/mermaid.js?1676550891"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

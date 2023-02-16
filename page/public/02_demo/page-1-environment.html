@@ -12,21 +12,21 @@
     <title>The environment :: Elastic Observability on AWS Workshop</title>
 
     
-    <link href="/css/nucleus.css?1676374247" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1676374247" rel="stylesheet">
-    <link href="/css/hybrid.css?1676374247" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1676374247" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1676374247" rel="stylesheet">
-    <link href="/css/auto-complete.css?1676374247" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1676374247" rel="stylesheet">
-    <link href="/css/theme.css?1676374247" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1676374247" rel="stylesheet">
+    <link href="/css/nucleus.css?1676550891" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1676550891" rel="stylesheet">
+    <link href="/css/hybrid.css?1676550891" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1676550891" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1676550891" rel="stylesheet">
+    <link href="/css/auto-complete.css?1676550891" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1676550891" rel="stylesheet">
+    <link href="/css/theme.css?1676550891" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1676550891" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1676374247" rel="stylesheet">
+    <link href="/css/theme-mine.css?1676550891" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1676374247"></script>
+    <script src="/js/jquery-3.3.1.min.js?1676550891"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1676374247"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1676374247"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1676550891"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1676550891"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1676374247"></script>
+<script type="text/javascript" src="/js/search.js?1676550891"></script>
 
     
   </div>
@@ -306,7 +306,7 @@
         
         ">
       <a href="/03_task1.html">
-          Find issues in applications running on AWS
+          <b>2.a </b>Find issues in applications running on AWS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -332,7 +332,7 @@
         
         ">
       <a href="/04_task2.html">
-          Analyze performance issues
+          <b>2.b </b>Analyze performance issues
           
             <i class="fas fa-check read-icon"></i>
           
@@ -358,7 +358,7 @@
         
         ">
       <a href="/05_task3.html">
-          AIOps Log Spike analysis
+          <b>2.c </b>AIOps Log Spike analysis
           
             <i class="fas fa-check read-icon"></i>
           
@@ -384,7 +384,7 @@
         
         ">
       <a href="/06_task4.html">
-          Anomaly Detection
+          <b>2.d </b>Anomaly Detection
           
             <i class="fas fa-check read-icon"></i>
           
@@ -675,11 +675,11 @@
 
 <h2 id="architecture">Architecture</h2>
 <p>We’ve prepared an AWS + Elastic environment for you. Within the AWS environment there is a simple python application deployed on EC2. This application is accessing DynamoDB and uses Lambda functions to enrich an object with more information. All the monitoring information including metrics and logs from the entire system are collected in Elastic. This is done by using one Elastic Agent at the EC2 instance and the Elastic Serverless forwarder for the logs. While the Elastic Agent would be also able to collect the different logs types this architecture has the advantage of running log monitoring on different hardware.</p>
-<p>The architecture of the sample app looks like this
+<p>The architecture of the sample app looks like this. For beter load distribution we have two EC2 instances running. One is called Elastic-Agent and one is called Elastic-App.
 <img src="/images/aws_workshop_arch.png" alt="Elastic environment"></p>
 <p>While running the workshop you have access to your Elastic Cluster and to the EC2 instances that are running the application. In your Elastic Cluster you can find a dashboard called <strong>Workshop Dashboard</strong>. Use this dashboard as a starting point for all your tasks. You can solve all the tasks by using these components. You don’t need anything else.
 It&rsquo;s expected that you find the issues using the Elastic Cluster and fix the issues within the EC2 environment(s).</p>
-<p>The code that is running the application is downloaded from this <a href="https://github.com/LucaWintergerst/workshop-draft">GitHub Repo</a> to the EC2 environment(s).</p>
+<p>The code that is running the application is downloaded from this <a href="https://github.com/elastic/aws-workshop">GitHub Repo</a> to the EC2 environment(s).</p>
 
 
 <footer class="footline">
@@ -1029,19 +1029,19 @@ It&rsquo;s expected that you find the issues using the Elastic Cluster and fix t
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1676374247"></script>
-    <script src="/js/perfect-scrollbar.min.js?1676374247"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1676374247"></script>
-    <script src="/js/jquery.sticky.js?1676374247"></script>
-    <script src="/js/featherlight.min.js?1676374247"></script>
-    <script src="/js/highlight.pack.js?1676374247"></script>
+    <script src="/js/clipboard.min.js?1676550891"></script>
+    <script src="/js/perfect-scrollbar.min.js?1676550891"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1676550891"></script>
+    <script src="/js/jquery.sticky.js?1676550891"></script>
+    <script src="/js/featherlight.min.js?1676550891"></script>
+    <script src="/js/highlight.pack.js?1676550891"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1676374247"></script>
-    <script src="/js/learn.js?1676374247"></script>
-    <script src="/js/hugo-learn.js?1676374247"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1676550891"></script>
+    <script src="/js/learn.js?1676550891"></script>
+    <script src="/js/hugo-learn.js?1676550891"></script>
     
         
-            <script src="/mermaid/mermaid.js?1676374247"></script>
+            <script src="/mermaid/mermaid.js?1676550891"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

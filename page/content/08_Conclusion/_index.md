@@ -5,8 +5,8 @@ weight: 90
 pre: "<b>3. </b>"
 ---
 
-After finishing the workshop your Elastic Environment is set up to collect and visualize all necessary data in order to observe everything that is happening within your infrastructure.
+After finishing the workshop you've learned how to work with an pre installed Elastic Cluster within the sample AWS application. You've had a look into Logs, Metrics and APM data. Which are three parts of Elastic Observability. Elastic Observability has much more to offer.
 
-To finalize the setup it is necessary to include Elastic in your day to day processes. Best way to do this is adding alerting rules for your Machine Learning jobs and also for specific data / events that needs your attention.
+If you like to continue your journey with Elastic by adding data from your own environments the best next step is to run our [terraform getting started scripts](https://ela.st/terraform). It works ´mostly the same then the workshop environment just with your own data.
 
-After setting up your set of alerting rules you might also want to automate the response to it. Every Elastic alert can have multiple connectors. That enables notifications as well as custom actions through e.g. webhooks.
+If you like to learn more about Elastic Observability for AWS in general you can continue reading the next chapter.

@@ -12,21 +12,21 @@
     <title>AIOps Log Spike analysis :: Elastic Observability on AWS Workshop</title>
 
     
-    <link href="/css/nucleus.css?1676374247" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1676374247" rel="stylesheet">
-    <link href="/css/hybrid.css?1676374247" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1676374247" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1676374247" rel="stylesheet">
-    <link href="/css/auto-complete.css?1676374247" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1676374247" rel="stylesheet">
-    <link href="/css/theme.css?1676374247" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1676374247" rel="stylesheet">
+    <link href="/css/nucleus.css?1676550891" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1676550891" rel="stylesheet">
+    <link href="/css/hybrid.css?1676550891" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1676550891" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1676550891" rel="stylesheet">
+    <link href="/css/auto-complete.css?1676550891" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1676550891" rel="stylesheet">
+    <link href="/css/theme.css?1676550891" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1676550891" rel="stylesheet">
     
-    <link href="/css/theme-mine.css?1676374247" rel="stylesheet">
+    <link href="/css/theme-mine.css?1676550891" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1676374247"></script>
+    <script src="/js/jquery-3.3.1.min.js?1676550891"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1676374247"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1676374247"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1676550891"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1676550891"></script>
 <script type="text/javascript">
     
         var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1676374247"></script>
+<script type="text/javascript" src="/js/search.js?1676550891"></script>
 
     
   </div>
@@ -306,7 +306,7 @@
         
         ">
       <a href="/03_task1.html">
-          Find issues in applications running on AWS
+          <b>2.a </b>Find issues in applications running on AWS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -332,7 +332,7 @@
         
         ">
       <a href="/04_task2.html">
-          Analyze performance issues
+          <b>2.b </b>Analyze performance issues
           
             <i class="fas fa-check read-icon"></i>
           
@@ -358,7 +358,7 @@
         
         ">
       <a href="/05_task3.html">
-          AIOps Log Spike analysis
+          <b>2.c </b>AIOps Log Spike analysis
           
             <i class="fas fa-check read-icon"></i>
           
@@ -384,7 +384,7 @@
         
         ">
       <a href="/06_task4.html">
-          Anomaly Detection
+          <b>2.d </b>Anomaly Detection
           
             <i class="fas fa-check read-icon"></i>
           
@@ -642,7 +642,11 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#task-3">Task 3</a></li>
+    <li><a href="#task-3">Task 3</a>
+      <ul>
+        <li><a href="#after-task-3">After task 3</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -670,6 +674,7 @@
 
 	<h2 id="task-3">Task 3</h2>
 <p>In the third task you have to find the reason for some anomalous log spikes. Every now and then the application is logging much more than usual. From a technical perspective there is no obvious reason for it, e.g. no cron job running.</p>
+<p><img src="/images/task3-start.png" alt="Start Task 3"></p>
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -682,7 +687,8 @@
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        <p>Within the Machine Learning menu in Kibana you can find &ldquo;Explain Log Spike&rdquo;. Use this with the Python Logs saved search.</p>
+        <h3 id="hint">Hint</h3>
+<p>Within the Machine Learning menu in Kibana you can find &ldquo;Explain Log Rate Spikes&rdquo;. Use this with the Python Logs saved search. Make sure that you set Deviation and Baseline based on your needs.</p>
 
     </div>
 </div>
@@ -698,9 +704,16 @@
     	</span>
     </div>
     <div class="expand-content" style="display: none;">
-        
+        <h3 id="solution">Solution</h3>
+<p>The expected finding is the user named hack0r, that tries to get enrichment data from the data base.
+<img src="/images/task3-solution.png" alt="Solution Task 3"></p>
+<p>After finding the result it would be a good idea to create a case about it. IT Security will take care from that point.
+You can do this under Observability -&gt; Cases</p>
+
     </div>
 </div>
+<h3 id="after-task-3">After task 3</h3>
+<p>When you&rsquo;ve found the issue. Think about what you should do with that information to make sure its handled appropriatly.</p>
 
 
 
@@ -1053,19 +1066,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1676374247"></script>
-    <script src="/js/perfect-scrollbar.min.js?1676374247"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1676374247"></script>
-    <script src="/js/jquery.sticky.js?1676374247"></script>
-    <script src="/js/featherlight.min.js?1676374247"></script>
-    <script src="/js/highlight.pack.js?1676374247"></script>
+    <script src="/js/clipboard.min.js?1676550891"></script>
+    <script src="/js/perfect-scrollbar.min.js?1676550891"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1676550891"></script>
+    <script src="/js/jquery.sticky.js?1676550891"></script>
+    <script src="/js/featherlight.min.js?1676550891"></script>
+    <script src="/js/highlight.pack.js?1676550891"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1676374247"></script>
-    <script src="/js/learn.js?1676374247"></script>
-    <script src="/js/hugo-learn.js?1676374247"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1676550891"></script>
+    <script src="/js/learn.js?1676550891"></script>
+    <script src="/js/hugo-learn.js?1676550891"></script>
     
         
-            <script src="/mermaid/mermaid.js?1676374247"></script>
+            <script src="/mermaid/mermaid.js?1676550891"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
