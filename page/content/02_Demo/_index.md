@@ -13,6 +13,6 @@ Elastic observes cross-VPC, cross-region, cross-AZ, cross-Account. No matter how
 
 Elastic supports collecting data via different ways. Using the Elastic Agent, but [agentless](https://serverlessrepo.aws.amazon.com/applications/eu-central-1/267093732750/elastic-serverless-forwarder) and native integrations are also available. In the introduction, we already learned about the Elastic Agent and how it can be used. We will continue using the agent to observe the AWS platform and the apps you are running in it.
 
-However, if you prefer not to use the Elastic Agent you can collect the same data using the [Elastic serverless forwarder](https://serverlessrepo.aws.amazon.com/applications/eu-central-1/267093732750/elastic-serverless-forwarder) which is a Lambda function that is able to collect the same data without the need to deploy an agent.
+However, if you prefer not to use the Elastic Agent, you can collect the same data using the [Elastic serverless forwarder](https://serverlessrepo.aws.amazon.com/applications/eu-central-1/267093732750/elastic-serverless-forwarder) which is a Lambda function that is able to collect the same data without the need to deploy an agent.
 
 ![AWS serverless overview](/images/aws-serverless-overview.png)
