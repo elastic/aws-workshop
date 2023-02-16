@@ -5,7 +5,7 @@ pre: "<b>2.c </b>"
 ---
 ## Task 3
 
-In the third task you have to find the reason for some anomalous log spikes. Every now and then the application is logging much more than usual. From a technical perspective there is no obvious reason for it, e.g. no cron job running.
+In the third task you will need to find the reason for some anomalous log spikes. Every now and then the application is logging much more than usual. From a technical perspective there is no obvious reason for it, e.g. no cron job running.
 
 ![Start Task 3](/images/task3-start.png)
 
