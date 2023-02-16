@@ -5,7 +5,7 @@ pre: "<b>2.d </b>"
 ---
 ## Task 4
 
-In the fourth and last task you have to find the reason for some strange data within the last month. Try to find the anomaly!
+In the fourth and last task, you will need to find the reason for some strange data within the last month. Try to find the anomaly!
 
 ![Start Task 4](/images/task4-start.png)
 
