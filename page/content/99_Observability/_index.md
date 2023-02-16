@@ -5,7 +5,7 @@ weight: 90
 pre: "<b>99. </b>"
 ---
 
-[Monitoring the AWS environment](https://www.elastic.co/observability/aws-monitoring) is a very common use case for Elastic. You can download the complete [ebook](https://www.elastic.co/aws/the-elastic-observability-guide-for-aws) about that topic.
+[Monitoring the AWS environment](https://www.elastic.co/observability/aws-monitoring) is a very common use case for Elastic. You can download the complete [ebook](https://www.elastic.co/aws/the-elastic-observability-guide-for-aws) about this topic.
 
 ![AWS overview](/images/aws-overview.png)
 
