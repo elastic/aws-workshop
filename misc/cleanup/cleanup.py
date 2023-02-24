@@ -2,7 +2,7 @@ import boto3
 import json
 
 # Set the AWS region
-region_name = "eu-west-1"
+region_name = "us-west-1"
 
 # Initialize the clients
 ec2 = boto3.client('ec2', region_name=region_name)
@@ -161,7 +161,7 @@ print('Delete CloudFormation Stack')
 cloudformation = boto3.client('cloudformation', region_name=region_name)
 
 # specify the name of the stack that you want to delete
-stack_names = ['sample-app-dev', 'serverlessrepo-terraform-elastic-serverless-forwarder']
+stack_names = ['sample-app-dev', 'serverlessrepo-workshop-terraform-elastic-serverless-forwarder']
 
 for stack_name in stack_names:
     # delete the stack

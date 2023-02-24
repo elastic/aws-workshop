@@ -22,7 +22,7 @@ data "aws_serverlessapplicationrepository_application" "esf_sar" {
 }
 
 resource "aws_serverlessapplicationrepository_cloudformation_stack" "esf_cf_stack" {
-  name             = "terraform-elastic-serverless-forwarder"
+  name             = "workshop-terraform-elastic-serverless-forwarder"
   application_id   = data.aws_serverlessapplicationrepository_application.esf_sar.application_id
   semantic_version = data.aws_serverlessapplicationrepository_application.esf_sar.semantic_version
   capabilities     = data.aws_serverlessapplicationrepository_application.esf_sar.required_capabilities
