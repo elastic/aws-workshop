@@ -1,6 +1,6 @@
 # Repo to run the aws-workshop
 
-This shows how this is expected to work
+This shows how this is expected to work. You can find the guide [here](https://elastic.awsworkshop.io/).
 ![image](https://user-images.githubusercontent.com/35069463/219047402-55365cd1-5ed2-45be-acde-07c8214ab528.png)
 
 ### Getting started
